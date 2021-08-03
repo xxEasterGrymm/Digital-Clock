@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Date;
 
 public class MyWindow extends JFrame {
@@ -26,12 +24,9 @@ public class MyWindow extends JFrame {
 
     public void startClock() {
 
-        Timer timer = new Timer(1000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String dateTime = new Date().toLocaleString();
-                label.setText(dateTime);
-            }
+        Timer timer = new Timer(1000, e -> {
+            String dateTime = new Date().toLocaleString();
+            label.setText(dateTime);
         });
         timer.start();
         JLabel ist = new JLabel("IST - Indian Standard Time (UTC + 5:30)");
