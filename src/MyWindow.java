@@ -23,7 +23,6 @@ public class MyWindow extends JFrame {
     }
 
     public void startClock() {
-
         Timer timer = new Timer(1000, e -> {
             String dateTime = new Date().toLocaleString();
             label.setText(dateTime);
